@@ -18,13 +18,15 @@ class SiteSettingResource extends Resource
 {
     protected static ?string $model = SiteSetting::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhone;
 
-    protected static ?string $navigationLabel = 'Pengaturan Situs';
+    protected static ?string $navigationLabel = 'Kontak';
 
-    protected static ?string $modelLabel = 'Pengaturan Situs';
+    protected static ?string $modelLabel = 'Kontak';
 
-    protected static ?string $pluralModelLabel = 'Pengaturan Situs';
+    protected static ?string $pluralModelLabel = 'Kontak';
+
+    protected static ?string $slug = 'kontak';
 
     public static function canCreate(): bool
     {

@@ -35,7 +35,7 @@ class SiteSettingsTable
                     ->dateTime('d M Y H:i'),
             ])
             ->recordActions([
-                EditAction::make()->label('Ubah Pengaturan'),
+                EditAction::make()->label('Ubah Kontak'),
             ]);
     }
 }

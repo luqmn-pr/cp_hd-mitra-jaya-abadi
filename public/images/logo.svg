@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+    <!-- Globe Icon -->
+    <g transform="translate(10, 5)">
+        <!-- Outer Circle / Ring -->
+        <circle cx="35" cy="35" r="33" fill="#FFFFFF" stroke="#0B5C9E" stroke-width="4"/>
+        
+        <!-- Latitude Lines -->
+        <ellipse cx="35" cy="35" rx="33" ry="14" fill="none" stroke="#0B5C9E" stroke-width="2.5"/>
+        <line x1="2" y1="35" x2="68" y2="35" stroke="#0B5C9E" stroke-width="2.5"/>
+        
+        <!-- Longitude Lines -->
+        <ellipse cx="35" cy="35" rx="14" ry="33" fill="none" stroke="#0B5C9E" stroke-width="2.5"/>
+        <line x1="35" y1="2" x2="35" y2="68" stroke="#0B5C9E" stroke-width="2.5"/>
+        
+        <!-- Center Emblem / Shield -->
+        <circle cx="35" cy="35" r="19" fill="#FFFFFF" stroke="#0B5C9E" stroke-width="2.5"/>
+        
+        <!-- HD Monogram in Red -->
+        <text x="35" y="42" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-weight="900" font-size="17" fill="#E30613" text-anchor="middle" letter-spacing="-0.5">HD</text>
+    </g>
+
+    <!-- Company Name Text -->
+    <g transform="translate(90, 20)">
+        <text x="0" y="24" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="800" font-size="20" fill="#14211F" letter-spacing="-0.5">
+            CV. HD Mitra Jaya Abadi
+        </text>
+        <text x="0" y="42" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="600" font-size="11" fill="#087F68" letter-spacing="1.5">
+            SERVICE EXCELLENT
+        </text>
+    </g>
+</svg>

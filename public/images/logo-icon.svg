@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+    <!-- Outer Circle / Ring -->
+    <circle cx="40" cy="40" r="37" fill="#FFFFFF" stroke="#0B5C9E" stroke-width="4.5"/>
+    
+    <!-- Latitude Lines -->
+    <ellipse cx="40" cy="40" rx="37" ry="16" fill="none" stroke="#0B5C9E" stroke-width="3"/>
+    <line x1="3" y1="40" x2="77" y2="40" stroke="#0B5C9E" stroke-width="3"/>
+    
+    <!-- Longitude Lines -->
+    <ellipse cx="40" cy="40" rx="16" ry="37" fill="none" stroke="#0B5C9E" stroke-width="3"/>
+    <line x1="40" y1="3" x2="40" y2="77" stroke="#0B5C9E" stroke-width="3"/>
+    
+    <!-- Center Emblem / Shield -->
+    <circle cx="40" cy="40" r="22" fill="#FFFFFF" stroke="#0B5C9E" stroke-width="3"/>
+    
+    <!-- HD Monogram in Red -->
+    <text x="40" y="48" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-weight="900" font-size="20" fill="#E30613" text-anchor="middle" letter-spacing="-0.5">HD</text>
+</svg>

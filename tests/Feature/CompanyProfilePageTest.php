@@ -2,8 +2,10 @@
 
 namespace Tests\Feature;
 
+use App\Models\Layanan;
 use App\Models\Portfolio;
 use App\Models\Service;
+use App\Models\User;
 use Database\Seeders\ContentSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -59,7 +61,8 @@ class CompanyProfilePageTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee($service->name);
         $response->assertSee('Portofolio '.$service->name);
-        $response->assertSee('CONTOH LAIN YANG DAPAT DIPESAN');
+        $response->assertSee('Contoh Produk Lainnya');
+        $response->assertDontSee('PORTOFOLIO RESMI');
         $response->assertDontSee('Standar Pengerjaan &amp; Administrasi', false);
     }
 
@@ -136,5 +139,48 @@ class CompanyProfilePageTest extends TestCase
         $response = $this->get('/admin/login');
 
         $response->assertStatus(200);
+    }
+
+    public function test_layanan_model_works_interchangeably_with_service(): void
+    {
+        $layanan = Layanan::where('slug', 'percetakan')->first();
+        $this->assertNotNull($layanan);
+        $this->assertSame('Percetakan', $layanan->name);
+
+        $service = Service::where('slug', 'percetakan')->first();
+        $this->assertNotNull($service);
+        $this->assertSame($layanan->id, $service->id);
+
+        $portfolio = Portfolio::published()->where('service_id', $layanan->id)->first();
+        if ($portfolio) {
+            $this->assertSame($layanan->id, $portfolio->layanan->id);
+            $this->assertSame($service->id, $portfolio->service->id);
+        }
+    }
+
+    public function test_filament_admin_navigation_has_layanan_and_kontak_and_no_inquiries(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/admin');
+        $response->assertStatus(200);
+        $response->assertSee('Layanan');
+        $response->assertSee('Kontak');
+        $response->assertDontSee('Pesan Masuk');
+        $response->assertDontSee('/admin/inquiries');
+    }
+
+    public function test_filament_layanan_and_kontak_routes_are_accessible(): void
+    {
+        $user = User::factory()->create();
+
+        $responseLayanan = $this->actingAs($user)->get('/admin/layanan');
+        $responseLayanan->assertStatus(200);
+
+        $responseKontak = $this->actingAs($user)->get('/admin/kontak');
+        $responseKontak->assertStatus(200);
+
+        $responseInquiries = $this->actingAs($user)->get('/admin/inquiries');
+        $responseInquiries->assertStatus(404);
     }
 }
