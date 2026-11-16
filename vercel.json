@@ -34,6 +34,8 @@
     }
   ],
   "env": {
+    "APP_URL": "https://cp-hd-mitra-jaya-abadi.vercel.app",
+    "ASSET_URL": "https://cp-hd-mitra-jaya-abadi.vercel.app",
     "APP_KEY": "base64:GmMLPsxaem2XyAf0Q1JIiMdFmbRuMchFpHerwXs+ZKg=",
     "APP_ENV": "production",
     "APP_DEBUG": "false",

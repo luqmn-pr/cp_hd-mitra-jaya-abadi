@@ -17,7 +17,7 @@ if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
     }
 
     // Copy bundled SQLite database to writable /tmp if present
-    $sqliteSource = __DIR__ . '/../database/database.sqlite';
+    $sqliteSource = __DIR__.'/../database/database.sqlite';
     $sqliteTarget = '/tmp/database.sqlite';
     if (! file_exists($sqliteTarget) && file_exists($sqliteSource)) {
         copy($sqliteSource, $sqliteTarget);
@@ -25,4 +25,4 @@ if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
 }
 
 // Forward to Laravel public/index.php
-require __DIR__ . '/../public/index.php';
+require __DIR__.'/../public/index.php';
