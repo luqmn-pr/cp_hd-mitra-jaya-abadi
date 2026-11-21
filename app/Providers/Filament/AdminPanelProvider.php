@@ -28,6 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('CV. HD Mitra Jaya Abadi')
+            ->brandLogo(fn () => view('filament.admin.logo'))
+            ->brandLogoHeight('2.5rem')
+            ->favicon(asset('images/logo-icon.svg'))
             ->colors([
                 'primary' => Color::hex('#2B3990'),
             ])
